@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>SVM CODER HUB | PORTAL HOME</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='/css/icons.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  
+  <br><br><br> <br> <br><br><br>
+  <h3 align="center" id="name"></h3>
+  <div align="center">
+    <div class="container">
+      <img src="/files/warning.gif" alt="">
+      <h3>ERROR 404</h3>
+      <p>Requested Page was not found!</p>
+      <button onclick="window.location.replace('/home.html')" class="bx bxs-left-arrow-circle"> Back</button>
+    </div>
+
+</div>
+<br><br><br>
+<script>
+  function checkforupdates() {
+  var version = localStorage.getItem('version')
+  if (localStorage.getItem('av') == 'yes') {
+    swal({
+      title: "Update Available",
+      text: "Version "+version+" is available to install",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Install '+localStorage.getItem('size'),
+      cancelButtonText: "Later",
+      closeOnConfirm: false,
+      closeOnCancel: false
+    },
+  function(isConfirm) {
+  if (isConfirm){
+    localStorage.setItem('av','no')
+    swal({
+      title: "Installing",
+      text: "Please wait",
+      imageUrl: 'files/loading.gif'
+    });
+    setTimeout(() => {
+      swal({
+        title: "Installed",
+        text: "Version "+version+" is successfully installed!",
+        imageUrl: 'files/tick.gif'
+      });
+      setTimeout(() => {
+        window.location.replace('update-history.html')
+      }, 2300);
+    }, 2000);
+  } 
+  else {
+    swal({
+      title: "Sure",
+      text: "You can update it later on.",
+      imageUrl: 'files/tick.gif'
+    });
+  }
+}
+    );
+  }
+  else {
+    swal({
+      title: "Already installed",
+      text: "Version "+version+" and it's assets are already installed!",
+      imageUrl: '/files/tick.gif'
+    });
+  }
+}
+</script>
+<script src="/js/app.js"></script>
+</body>
+</html>

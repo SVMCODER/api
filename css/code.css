@@ -1,0 +1,217 @@
+.CodeMirror {
+	min-height: 86.70%;
+	
+}
+
+html,body {
+	outline-color: #270092;
+	height: 94%;
+	margin: 0;
+	
+  }
+  a{
+	text-decoration: underline;
+	color: #00f7ff;
+  }
+body {
+  outline-color: #2f2ffd;
+  background-color: #000107;
+  color: rgb(255, 255, 255);
+}
+
+.tab-nav-container{
+	color: rgb(255, 255, 255);
+	background-color: #010003;
+	box-shadow: 0 3px 6px #020008, 0 3px 6px #020008;
+	display: flex;
+	justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 0.3em 1em;
+}
+
+.tab{
+	color: rgb(255, 255, 255);
+	border-radius:50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content:center;
+	padding: 20px 20px;
+	margin: 0 10px;
+	font-size: 1em;
+	transition: background 0.4 linear;
+}
+
+.tab i{
+	font-size: 1em;
+}
+
+.tab p{
+	font-weight:bold;
+	overflow: hidden;
+	max-width:0;
+}
+.tab.active p{
+	overflow: hidden;
+}
+.tab.active{
+	color: #3e00e7;
+}
+.tab.active.yellow{
+	background-color: rgba(230, 169, 25, 0.2);
+	color: rgba(230, 169, 25, 1);
+}
+.tab.active.teal{
+	background-color: rgba(28, 150, 162, 0.2);
+	color: rgba(28, 150, 162, 1);
+}
+
+@media (max-width: 450px){
+	.tab-nav-container{
+		padding: 5px;
+	}
+	
+	.tab {
+		padding: 0.5em 1em;
+		margin: 0;
+	}
+	
+	.tab i{
+		font-size: 1em;
+	}
+}
+button {
+	width: fit-content;
+	border: none;
+	padding: 0.3em 0.5em;
+	border-radius: 4px;
+	background-color: #270092;
+	color: #ffffff;
+	font-size: 16px;
+	cursor: pointer;
+  }
+
+.container {
+	box-shadow: rgba(151, 130, 226, 0.411) 0px 1px 4px;
+	background-color: #ffffff;
+	width: fit-content;
+	height: auto;
+	width: 80%;
+	border-left: 5px solid #270092;
+	border-radius: 5%;
+	color: rgb(0, 0, 0);
+	padding: 0.6em 1em;
+}
+.head{
+		color: rgb(255, 255, 255);
+		background-color: #020008;
+		display: flex;
+	  position: fixed;
+	  border-bottom: 0.2px solid rgb(4, 0, 24) ;
+	  justify-content: space-between;
+	  width: 100%;
+	  left: 0;
+	  top: 0;
+	  padding: 0.1em 1em;
+}
+.right {
+	float: right;
+	padding: 0em 1.5em;
+}
+img {
+	width: 70%;
+	height: auto;
+}
+input {
+	padding: 0.6em 1em;
+	border: none;
+	outline-color: #3500d4;
+	background-color: #050014;
+	color: rgb(255, 255, 255);
+}
+
+.hd{
+	color: rgb(0, 0, 0);
+	display: flex;
+  justify-content: space-between;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 0.1em 1em;
+}
+
+#dd {
+	color:rgb(254, 255, 209)
+}
+#editor {
+	width: 95%;
+	min-height: 80%;
+}
+.runbtn {
+	background-color: #2f2ffd;
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
+	text-align: center;
+	color: #FFF;
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.5), 3px 3px 3px rgba(0,0,0,0.25);
+	position: fixed;
+	bottom: 50px;
+	right: 30px;
+	top: 79%;
+	display: inline-block;
+	text-align: center;
+	cursor: default;
+}
+.editor-prvright {
+	float: right;
+	border-radius: 3%;
+	background-color: #282A36;
+	color: rgb(255, 255, 255);
+}
+.editor-prv {
+	justify-content: space-between;
+	display: flex;
+	border-bottom: 0.1px solid #555a72;
+}
+#codef {
+	font-size: 18px;
+	color: rgb(206, 210, 252);
+}
+
+input {
+	padding: 0.2em 1em;
+	outline: none;
+	color: white;
+	border: none;
+	background-color: #111;
+	font-family: cursive;
+}
+.icon {
+	width: auto;
+	height: 200px;
+}
+#p{
+	background-color: #282A36;
+	color: rgb(255, 255, 255);
+	text-transform: uppercase;
+}
+h4{
+	color: rgb(0, 0, 0);
+}
+#prv {
+	background-color: #ffffff;
+	height: 92%;
+	width: 99.50%;
+}
+.box {
+	height: 95%;
+}
+.head img{
+	width: 80px;
+	height: 40px;
+	place-self: center;
+}

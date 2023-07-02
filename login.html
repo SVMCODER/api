@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>SVM CODER HUB | PORTAL</title>
+    <link rel="stylesheet" href="css/icons.css">
+    <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body> 
+    <div class="signup-form">
+        <div class="container">
+          <div class="header">
+            <div class="f">
+              <h1></h1>
+              <h1></h1>
+              <img src="files/logoo.png" alt="">
+            <h2>SVM CODER HUB</h2>
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+            </div>
+            <p>Signup To Our Portal</p>
+          </div>
+            <div class="input">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" id="username" placeholder="Username" required/>
+            </div>
+            <div class="input">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="password" placeholder="Password" required/>
+            </div>
+            <div class="input">
+              <i class="fa-solid fa-address-card"></i>
+              <input type="number" id="admno" placeholder="Admission Number" required/>
+            </div>
+            <div class="input">
+              <i class="fa-solid fa-male"></i>
+              <input type="text" id="frname" placeholder="Father's Name" required/>
+            </div>
+            <div class="input">
+              <i class="fa-solid fa-female"></i>
+              <input type="text" id="mrname" placeholder="Mother's Name" required/>
+            </div>
+            <input type="submit" value="SIGN UP" onclick="login()" />
+        </div>
+      </div>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  outline-color: #030016;
+}
+img {
+  width: 70%;
+}
+html,body {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: #01000f;
+}
+
+p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.signup-form {
+  width: 97%;
+  padding: 24px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  box-shadow: 2px 4px 8px #07001ff8;
+  text-align: center;
+}
+
+
+
+.header h2 {
+  color: #080cf1;
+}
+
+.input {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.input input {
+  width: 100%;
+  border: none;
+  padding: 8px 40px;
+  border-radius: 4px;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  font-size: 16px;
+}
+
+.input input::placeholder {
+  color: #6b7280;
+}
+
+.input i {
+  top: 50%;
+  width: 36px;
+  position: absolute;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: 16px;
+}
+
+input[type=Submit] {
+  width: 100%;
+  border: none;
+  padding: 8px 0;
+  margin: 24px 0;
+  border-radius: 4px;
+  background-color: #0b0ff8;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type=Submit]:active {
+  background-color: #180cf8;
+  transition: all 0.3s ease;
+}
+</style>
+<script src="js/index.js"></script>
+</body>
+</html>
