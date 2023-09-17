@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVM CODER HUB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://use.fontawesome.com/7ad89d9866.js"></script>
+    <script src="https://kit.fontawesome.com/51278b7950.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
+    <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
+   </head>
+<body >
+    <div class="tab-nav-container">
+        <div class="tab" onclick="window.location.replace('home.html')">
+          <i class='bx bx-home'></i>
+          <p></p>
+        </div>
+        <div class="tab" onclick="window.location.replace('config.html')">
+          <i class='bx bx-notepad'></i>
+          <p></p>
+        </div>
+        <div class="tab" onclick="window.location.replace('browser.html')">
+          <i class='bx bx-rocket'></i>
+          <p></p>
+        </div>
+        <div class="tab" onclick="window.location.replace('projects.html')">
+          <i class='bx bx-heart' ></i>
+          <p></p>
+        </div>
+        <div class="tab active purple">
+          <i class='bx bxs-user' ></i>
+          <p></p>
+        </div>
+      </div>
+      <div class="head">
+        <img src="https://svmassembly.tk/files/logoo.png" alt=""> <h3>SVM CODER HUB</h3>
+        <h3 class="right" >
+          <i class="bx bxs-download" onclick="checkforupdates()"></i>
+          <i class="bx bxs-dsd"></i>
+          <i class='bx bx-log-out' onclick="logout()" ></i></h3>
+      </div>
+      <p></p>
+  <br><br> 
+  <h3 align="center">My Account</h3>
+   <div class="all" align="center">
+    <div align="center" class="container" align="center" id="info">
+  </div><br>
+  <div class="container">
+    <h3>Settings</h3>
+      <div id="info2"></div> 
+      <button class="bx bx-save" onclick="save()"> Save</button>
+  </div><br>
+   </div>
+  <br><br><br><br>
+  <script>
+  function checkforupdates() {
+  var version = localStorage.getItem('version')
+  if (localStorage.getItem('av') == 'yes') {
+    swal({
+      title: "Update Available",
+      text: "Version "+version+" is available to install",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Install '+localStorage.getItem('size'),
+      cancelButtonText: "Later",
+      closeOnConfirm: false,
+      closeOnCancel: false
+    },
+  function(isConfirm) {
+  if (isConfirm){
+    localStorage.setItem('av','no')
+    swal({
+      title: "Installing",
+      text: "Please wait",
+      imageUrl: 'https://svmassembly.tk/files/loading.gif'
+    });
+    setTimeout(() => {
+      swal({
+        title: "Installed",
+        text: "Version "+version+" is successfully installed!",
+        imageUrl: 'https://svmassembly.tk/files/tick.gif'
+      });
+      setTimeout(() => {
+        window.location.replace('update-history.html')
+      }, 2300);
+    }, 2000);
+  } 
+  else {
+    swal({
+      title: "Sure",
+      text: "You can update it later on.",
+      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+    });
+  }
+}
+    );
+  }
+  else {
+    swal({
+      title: "Already installed",
+      text: "Version "+version+" and it's assets are already installed!",
+      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+    });
+  }
+}
+  </script>
+  <script src="js/profile.js"></script>
+  <style>
+  </style>
+</body>
+</html>

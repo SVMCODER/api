@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVM CODER HUB</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/dracula.min.css"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/hint/show-hint.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/hint/show-hint.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/edit/trailingspace.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://use.fontawesome.com/7ad89d9866.js"></script>
+    <script src="https://kit.fontawesome.com/51278b7950.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
+    <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
+   </head>
+<body >
+    <div class="tab-nav-container">
+        <div class="tab" onclick="window.location.replace('home.html')">
+          <i class='bx bx-home'></i>
+          <p></p>
+        </div>
+        <div class="tab" onclick="window.location.replace('config.html')">
+          <i class='bx bx-notepad'></i>
+          <p></p>
+        </div>
+        <div class="tab active purple">
+          <i class='bx bxs-rocket'></i>
+          <p></p>
+        </div>
+        <div class="tab" onclick="window.location.replace('projects.html')">
+          <i class='bx bx-heart' ></i>
+          <p></p>
+        </div>
+        <div class="tab" onclick="window.location.replace('profile.html')">
+          <i class='bx bx-user' ></i>
+          <p></p>
+        </div>
+      </div>
+      <div class="head">
+        <img src="https://svmassembly.tk/files/logoo.png" alt=""><h3>SVM CODER HUB</h3>
+        <h3 class="right" >
+          <i class="bx bxs-download" onclick="checkforupdates()"></i>
+          <i class="bx bxs-dsd"></i>
+          <i class='bx bx-log-out' onclick="logout()" ></i></h3>
+      </div>
+      <p></p>
+  <br><br> <br>
+  <h3 align="center">Train A Machine</h3>
+  <div class="a" align="center">
+   <div class="all" align="center" id="project">
+    <div class='container' align="left">
+      <h3 align="center">Details</h3>
+      <div class="status" align="left">
+        <h3 align="center">Server Data</h3><hr>
+        <table>
+            <tr>
+              <td>Status</td>
+              <td>🟢 Online</td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td id="mname"></td>
+            </tr>
+            <tr>
+                <td>Proxy</td>
+                <td id="proxy"></td>
+            </tr>
+            <tr>
+                <td>Commands</td>
+                <td id="commands">0</td>
+            </tr>
+          </table>
+      </div>
+  </div><br>
+  <div class="container">
+    <h3 align="center">Commands</h3>
+    <input type="text" name="" id="cmd" placeholder="Your Command">
+    <br>
+    <button class="bx bx-plus" onclick="answer()"> Insert Data</button>
+    <div id="result">
+        
+    </div>
+  </div><br>
+  <div class="container" id="history">
+    <h3>No History</h3>
+  </div> <br>
+   </div>
+  <style>
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ffffff;
+  text-align: left;
+  padding: 8px;
+}
+
+
+    #result {
+        border: 0.2px solid grey;
+        padding: 0.6em 1em;
+    }
+    .status {
+        background-color: #111;
+        color: white;
+        padding: 0.6em 1em;
+    }
+  </style>
+  <script>
+    document.getElementById('result').innerHTML = `
+    🤖 | Hello ${localStorage.getItem('name')}, give me a command. I will answer them.
+    `
+    
+    document.getElementById('mname').innerHTML = localStorage.getItem('mname')
+    document.getElementById('proxy').innerHTML = localStorage.getItem('proxy')
+    function answer() {
+        ques = document.getElementById('cmd').value
+        if (ques) {
+            commands = localStorage.getItem('commands')
+           if (commands)
+         var hh = Number(localStorage.getItem('commands'))
+ad = hh+1
+localStorage.setItem('commands',ad)
+localStorage.setItem('history', localStorage.getItem('history')+`<h3>${ques}</h3>`.replace('null',''))
+            document.getElementById('result').innerHTML = `
+        🤖 | You said: ${ques}
+        `
+        document.getElementById('history').innerHTML = localStorage.getItem('history')
+
+document.getElementById('commands').innerHTML = localStorage.getItem('commands')
+        }
+        else {
+            swal({
+      title: "Please command it",
+      text: "",
+      imageUrl: ''
+    });
+        }
+    }
+  function checkforupdates() {
+  var version = localStorage.getItem('version')
+  if (localStorage.getItem('av') == 'yes') {
+    swal({
+      title: "Update Available",
+      text: "Version "+version+" is available to install",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Install '+localStorage.getItem('size'),
+      cancelButtonText: "Later",
+      closeOnConfirm: false,
+      closeOnCancel: false
+    },
+  function(isConfirm) {
+  if (isConfirm){
+    localStorage.setItem('av','no')
+    swal({
+      title: "Installing",
+      text: "Please wait",
+      imageUrl: 'https://svmassembly.tk/files/loading.gif'
+    });
+    setTimeout(() => {
+      swal({
+        title: "Installed",
+        text: "Version "+version+" is successfully installed!",
+        imageUrl: 'https://svmassembly.tk/files/tick.gif'
+      });
+      setTimeout(() => {
+        window.location.replace('update-history.html')
+      }, 2300);
+    }, 2000);
+  } 
+  else {
+    swal({
+      title: "Sure",
+      text: "You can update it later on.",
+      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+    });
+  }
+}
+    );
+  }
+  else {
+    swal({
+      title: "Already installed",
+      text: "Version "+version+" and it's assets are already installed!",
+      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+    });
+  }
+}
+document.getElementById('history').innerHTML = localStorage.getItem('history')
+
+document.getElementById('commands').innerHTML = localStorage.getItem('commands')
+  </script>
+  <script src="js/machine.js"></script>
+  <br><br><br>
+</body>
+</html>
