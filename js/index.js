@@ -27,7 +27,7 @@ function login() {
     swal({
       title: "Welcome Founder Shaurya Tripathi",
       text: "Dear Founder Shaurya Tripathi, Please wait while the server connects to the database api",
-      imageUrl: "/files/shaurya.png"
+      imageUrl: "files/shaurya.png"
     });
     localStorage.setItem('name', "Shaurya Tripathi")
     localStorage.setItem('role', "Founder")
@@ -63,7 +63,7 @@ function login() {
     swal({
       title: "Welcome Rohit Srivastava",
       text: "Dear Rohit, Please wait while we log you in.",
-      imageUrl: "/files/rohit.png"
+      imageUrl: "files/rohit.png"
     });
     localStorage.setItem('name', "Rohit Srivastava")
     localStorage.setItem('role', "Onwer")
@@ -99,7 +99,7 @@ function login() {
     swal({
       title: "Welcome Principal Mam",
       text: "Dear Mam, Please wait while we log you in.",
-      imageUrl: "/files/logoo.png"
+      imageUrl: "files/logoo.png"
     });
     localStorage.setItem('name', "Garima Upadhyaya")
     localStorage.setItem('role', "Principal")
@@ -134,7 +134,7 @@ function login() {
     swal({
       title: "Welcome "+username,
       text: "Dear "+username+", Please wait while we are logging you in.",
-      imageUrl: "/files/student.gif"
+      imageUrl: "files/student.gif"
     });
     localStorage.setItem('name', username)
     localStorage.setItem('role', 'User')
@@ -202,7 +202,7 @@ function logout() {
       swal({
         title: "Ah! You're safe",
         text: "Your projects are safe",
-        imageUrl: "/files/tick.gif"
+        imageUrl: "files/tick.gif"
       });
     }
     });
