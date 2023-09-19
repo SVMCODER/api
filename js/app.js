@@ -19,13 +19,13 @@ function create() {
     swal({
       title: "Creating Project",
       text: "Please wait while we are creating your project.",
-      imageUrl: '/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
       setTimeout(() => {
         swal({
           title: "Project Created",
           text: "Done!",
-          imageUrl: '/files/tick.gif'
+          imageUrl: 'files/tick.gif'
         });
         setTimeout(() => {
           window.location.replace('codeaio.html')
@@ -54,13 +54,13 @@ function checkforupdates() {
     swal({
       title: "Installing",
       text: "Please wait",
-      imageUrl: '/files/loading.gif'
+      imageUrl: 'files/loading.gif'
     });
     setTimeout(() => {
       swal({
         title: "Installed",
         text: "Version "+version+" is successfully installed!",
-        imageUrl: '/files/tick.gif'
+        imageUrl: 'files/tick.gif'
       });
       setTimeout(() => {
         window.location.replace('update-history.html')
@@ -71,7 +71,7 @@ function checkforupdates() {
     swal({
       title: "Sure",
       text: "You can update it later on.",
-      imageUrl: '/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
   }
 }
@@ -81,7 +81,7 @@ function checkforupdates() {
     swal({
       title: "Already installed",
       text: "Version "+version+" and it's assets are already installed!",
-      imageUrl: '/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
   }
 }
@@ -121,7 +121,7 @@ function logout() {
       swal({
         title: "Ah! You're safe",
         text: "Your projects are safe",
-        imageUrl: '/files/tick.gif'
+        imageUrl: 'files/tick.gif'
       });
     }
     });
