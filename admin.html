@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="head">
-          <img src="https://svmassembly.tk/files/logoo.png" alt=""><h3>SVM ADMIN PANEL</h3>
+          <img src="files/logoo.png" alt=""><h3>SVM ADMIN PANEL</h3>
           <h3 class="right" >
             <i class="bx bxs-download" onclick="checkforupdates()"></i>
             <i class="bx bxs-dsd"></i>
@@ -52,7 +52,7 @@
     <br>
     <div class="container">
       <h3>Server Status</h3>
-      <img src="https://svmassembly.tk/files/upload.gif" alt="">
+      <img src="files/upload.gif" alt="">
       <h4 id="ping"></h4>
       <h4 id="number">Local Host : 127.0.0.1:5500</h4>
       <h4 id="location">Server Location : America</h4>
@@ -107,13 +107,13 @@ function checkforupdates() {
     swal({
       title: "Installing",
       text: "Please wait",
-      imageUrl: 'https://svmassembly.tk/files/loading.gif'
+      imageUrl: 'files/loading.gif'
     });
     setTimeout(() => {
       swal({
         title: "Installed",
         text: "Version "+version+" is successfully installed!",
-        imageUrl: 'https://svmassembly.tk/files/tick.gif'
+        imageUrl: 'files/tick.gif'
       });
       setTimeout(() => {
         window.location.replace('update-history.html')
@@ -124,7 +124,7 @@ function checkforupdates() {
     swal({
       title: "Sure",
       text: "You can update it later on.",
-      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
   }
 }
@@ -134,7 +134,7 @@ function checkforupdates() {
     swal({
       title: "Already installed",
       text: "Version "+version+" and it's assets are already installed!",
-      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
   }
 }

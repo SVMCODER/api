@@ -58,7 +58,7 @@ function logout() {
         swal({
           title: "Ah! You're safe",
           text: "Your projects are safe",
-          imageUrl: 'https://svmassembly.tk/files/tick.gif'
+          imageUrl: '/files/tick.gif'
         });
       }
       });

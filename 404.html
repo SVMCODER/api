@@ -21,7 +21,7 @@
   <h3 align="center" id="name"></h3>
   <div align="center">
     <div class="container">
-      <img src="https://svmassembly.tk/files/warning.gif" alt="">
+      <img src="files/warning.gif" alt="">
       <h3>ERROR 404</h3>
       <p>Requested Page was not found!</p>
       <button onclick="window.location.replace('/home.html')" class="bx bxs-left-arrow-circle"> Back</button>
@@ -50,13 +50,13 @@
     swal({
       title: "Installing",
       text: "Please wait",
-      imageUrl: 'https://svmassembly.tk/files/loading.gif'
+      imageUrl: 'files/loading.gif'
     });
     setTimeout(() => {
       swal({
         title: "Installed",
         text: "Version "+version+" is successfully installed!",
-        imageUrl: 'https://svmassembly.tk/files/tick.gif'
+        imageUrl: 'files/tick.gif'
       });
       setTimeout(() => {
         window.location.replace('update-history.html')
@@ -67,7 +67,7 @@
     swal({
       title: "Sure",
       text: "You can update it later on.",
-      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
   }
 }
@@ -77,7 +77,7 @@
     swal({
       title: "Already installed",
       text: "Version "+version+" and it's assets are already installed!",
-      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
   }
 }

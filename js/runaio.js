@@ -64,7 +64,7 @@ swal({
     swal({
       title: "Ah! You're safe",
       text: "Your projects are safe",
-      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+      imageUrl: '/files/tick.gif'
     });
   }
   });
@@ -89,13 +89,13 @@ function checkforupdates() {
     swal({
       title: "Installing",
       text: "Please wait",
-      imageUrl: 'https://svmassembly.tk/files/loading.gif'
+      imageUrl: '/files/loading.gif'
     });
     setTimeout(() => {
       swal({
         title: "Installed",
         text: "Version "+version+" is successfully installed!",
-        imageUrl: 'https://svmassembly.tk/files/tick.gif'
+        imageUrl: '/files/tick.gif'
       });
       setTimeout(() => {
         window.location.replace('update-history.html')
@@ -106,7 +106,7 @@ function checkforupdates() {
     swal({
       title: "Sure",
       text: "You can update it later on.",
-      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+      imageUrl: '/files/tick.gif'
     });
   }
 }
@@ -116,7 +116,7 @@ function checkforupdates() {
     swal({
       title: "Already installed",
       text: "Version "+version+" and it's assets are already installed!",
-      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+      imageUrl: '/files/tick.gif'
     });
   }
 }
@@ -131,7 +131,7 @@ localStorage.setItem('pcount',ad)
     localStorage.setItem('database', localStorage.getItem('database')+`\n--------------\nProject Name: ${pname}\nFile Name: ${fname}\nCode: ${code = localStorage.getItem('codeaio')}\n`.replace('null',''))
     localStorage.setItem('project',localStorage.getItem('project')+`
     <div class='container'>
-    <img src='https://svmassembly.tk/files/folder.gif'>
+    <img src='/files/folder.gif'>
     <h3>${pname}</h3>
     <h4 class='bx bx-file fname'>File Name ${fname}</h4>
     <textarea readonly>${code}</textarea>

@@ -27,7 +27,7 @@ function login() {
     swal({
       title: "Welcome Founder Shaurya Tripathi",
       text: "Dear Founder Shaurya Tripathi, Please wait while the server connects to the database api",
-      imageUrl: "https://svmassembly.tk/files/shaurya.png"
+      imageUrl: "/files/shaurya.png"
     });
     localStorage.setItem('name', "Shaurya Tripathi")
     localStorage.setItem('role', "Founder")
@@ -41,15 +41,15 @@ function login() {
     <h3>Profile</h3>
       <img src="svmassembly.tk/files/shaurya.png" alt="">
     <h3 class='verified'>
-    <img src=https://svmassembly.tk/files/hammer.gif'>
-    <img src=https://svmassembly.tk/files/verified.gif'>
+    <img src=/files/hammer.gif'>
+    <img src=/files/verified.gif'>
     ${localStorage.getItem('name')}
     </h3>
     <h4 class='verified'>
-    <img src=https://svmassembly.tk/files/crown.gif'>
+    <img src=/files/crown.gif'>
     ${localStorage.getItem('role')}</h4>
     <h4 class='verified'>
-    <img src=https://svmassembly.tk/files/html.gif'>
+    <img src=/files/html.gif'>
     ${localStorage.getItem('badge')}
     </h4>
     <button class="bx bx-log-out red" onclick="logout()"> Logout</button>
@@ -63,7 +63,7 @@ function login() {
     swal({
       title: "Welcome Rohit Srivastava",
       text: "Dear Rohit, Please wait while we log you in.",
-      imageUrl: "https://svmassembly.tk/files/rohit.png"
+      imageUrl: "/files/rohit.png"
     });
     localStorage.setItem('name', "Rohit Srivastava")
     localStorage.setItem('role', "Onwer")
@@ -78,14 +78,14 @@ function login() {
     <h3>Profile</h3>
       <img src="svmassembly.tk/files/rohit.jpg" alt="">
     <h3 class='verified'>
-    <img src=https://svmassembly.tk/files/verified.gif'>
+    <img src=/files/verified.gif'>
     ${localStorage.getItem('name')}
     </h3>
     <h4 class='verified'>
-    <img src=https://svmassembly.tk/files/hammer.gif'>
+    <img src=/files/hammer.gif'>
     ${localStorage.getItem('role')}</h4>
     <h4 class='verified'>
-    <img src=https://svmassembly.tk/files/crown.gif'>
+    <img src=/files/crown.gif'>
     ${localStorage.getItem('badge')}
     </h4>
     <button class="bx bx-log-out red" onclick="logout()"> Logout</button>
@@ -99,7 +99,7 @@ function login() {
     swal({
       title: "Welcome Lakshmi Mam",
       text: "Dear Teacher, Please wait while we log you in.",
-      imageUrl: "https://svmassembly.tk/files/logoo.png"
+      imageUrl: "/files/logoo.png"
     });
     localStorage.setItem('name', "Lakshmi")
     localStorage.setItem('role', "Teacher")
@@ -114,14 +114,14 @@ function login() {
     <h3>Profile</h3>
       <img src="svmassembly.tk/files/profile.gif" alt="">
     <h3 class='verified'>
-    <img src=https://svmassembly.tk/files/verified.gif'>
+    <img src=/files/verified.gif'>
     ${localStorage.getItem('name')}
     </h3>
     <h4 class='verified'>
-    <img src=https://svmassembly.tk/files/teacher.gif'>
+    <img src=/files/teacher.gif'>
     ${localStorage.getItem('role')}</h4>
     <h4 class='verified'>
-    <img src=https://svmassembly.tk/files/hammer.gif'>
+    <img src=/files/hammer.gif'>
     ${localStorage.getItem('badge')}</h4>
     <button class="bx bx-log-out red" onclick="logout()"> Logout</button>
     <button class="bx bx-cog" onclick="apanel()"> Admin Panel</button>
@@ -134,7 +134,7 @@ function login() {
     swal({
       title: "Welcome "+username,
       text: "Dear "+username+", Please wait while we are logging you in.",
-      imageUrl: "https://svmassembly.tk/files/student.gif"
+      imageUrl: "/files/student.gif"
     });
     localStorage.setItem('name', username)
     localStorage.setItem('role', 'User')
@@ -202,7 +202,7 @@ function logout() {
       swal({
         title: "Ah! You're safe",
         text: "Your projects are safe",
-        imageUrl: "https://svmassembly.tk/files/tick.gif"
+        imageUrl: "/files/tick.gif"
       });
     }
     });

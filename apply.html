@@ -53,7 +53,7 @@
   <h3 align="center">Appliction Form</h3>
   <div align="center">
     <div class="container">
-      <img src="https://svmassembly.tk/files/number-one.gif" alt="">
+      <img src="files/number-one.gif" alt="">
       <input type="text" name="" id="pname" placeholder="Project Name"><br><br>
       <textarea name="" id="code" cols="30" rows="10" placeholder="Write or Paste the code here."></textarea>
       <div id="error"></div>
@@ -93,7 +93,7 @@
       swal({
         title: "Form Submitted!",
         text: "Dear "+uname+", Your application has been successfully sent!",
-        imageUrl: 'https://svmassembly.tk/files/tick.gif'
+        imageUrl: 'files/tick.gif'
       })
       setTimeout(() => {
         window.location.replace('home.html')
@@ -138,13 +138,13 @@
     swal({
       title: "Installing",
       text: "Please wait",
-      imageUrl: 'https://svmassembly.tk/files/loading.gif'
+      imageUrl: 'files/loading.gif'
     });
     setTimeout(() => {
       swal({
         title: "Installed",
         text: "Version "+version+" is successfully installed!",
-        imageUrl: 'https://svmassembly.tk/files/tick.gif'
+        imageUrl: 'files/tick.gif'
       });
       setTimeout(() => {
         window.location.replace('update-history.html')
@@ -155,7 +155,7 @@
     swal({
       title: "Sure",
       text: "You can update it later on.",
-      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
   }
 }
@@ -165,7 +165,7 @@
     swal({
       title: "Already installed",
       text: "Version "+version+" and it's assets are already installed!",
-      imageUrl: 'https://svmassembly.tk/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
   }
 }
