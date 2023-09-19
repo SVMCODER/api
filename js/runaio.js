@@ -64,7 +64,7 @@ swal({
     swal({
       title: "Ah! You're safe",
       text: "Your projects are safe",
-      imageUrl: '/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
   }
   });
@@ -89,13 +89,13 @@ function checkforupdates() {
     swal({
       title: "Installing",
       text: "Please wait",
-      imageUrl: '/files/loading.gif'
+      imageUrl: 'files/loading.gif'
     });
     setTimeout(() => {
       swal({
         title: "Installed",
         text: "Version "+version+" is successfully installed!",
-        imageUrl: '/files/tick.gif'
+        imageUrl: 'files/tick.gif'
       });
       setTimeout(() => {
         window.location.replace('update-history.html')
@@ -106,7 +106,7 @@ function checkforupdates() {
     swal({
       title: "Sure",
       text: "You can update it later on.",
-      imageUrl: '/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
   }
 }
@@ -116,7 +116,7 @@ function checkforupdates() {
     swal({
       title: "Already installed",
       text: "Version "+version+" and it's assets are already installed!",
-      imageUrl: '/files/tick.gif'
+      imageUrl: 'files/tick.gif'
     });
   }
 }
