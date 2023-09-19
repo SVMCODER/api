@@ -39,17 +39,17 @@ function login() {
     localStorage.setItem('verified',true)
     localStorage.setItem('info', `
     <h3>Profile</h3>
-      <img src="svmassembly.tk/files/shaurya.png" alt="">
+      <img src="/files/shaurya.png" alt="">
     <h3 class='verified'>
-    <img src=/files/hammer.gif'>
-    <img src=/files/verified.gif'>
+    <img src='/files/hammer.gif'>
+    <img src='/files/verified.gif'>
     ${localStorage.getItem('name')}
     </h3>
     <h4 class='verified'>
-    <img src=/files/crown.gif'>
+    <img src='/files/crown.gif'>
     ${localStorage.getItem('role')}</h4>
     <h4 class='verified'>
-    <img src=/files/html.gif'>
+    <img src='/files/html.gif'>
     ${localStorage.getItem('badge')}
     </h4>
     <button class="bx bx-log-out red" onclick="logout()"> Logout</button>
@@ -76,16 +76,16 @@ function login() {
     localStorage.setItem('info',
     `
     <h3>Profile</h3>
-      <img src="svmassembly.tk/files/rohit.jpg" alt="">
+      <img src="/files/rohit.jpg" alt="">
     <h3 class='verified'>
-    <img src=/files/verified.gif'>
+    <img src='/files/verified.gif'>
     ${localStorage.getItem('name')}
     </h3>
     <h4 class='verified'>
-    <img src=/files/hammer.gif'>
+    <img src='/files/hammer.gif'>
     ${localStorage.getItem('role')}</h4>
     <h4 class='verified'>
-    <img src=/files/crown.gif'>
+    <img src='/files/crown.gif'>
     ${localStorage.getItem('badge')}
     </h4>
     <button class="bx bx-log-out red" onclick="logout()"> Logout</button>
@@ -112,16 +112,16 @@ function login() {
     localStorage.setItem('info',
     `
     <h3>Profile</h3>
-      <img src="svmassembly.tk/files/profile.gif" alt="">
+      <img src="/files/profile.gif" alt="">
     <h3 class='verified'>
-    <img src=/files/verified.gif'>
+    <img src='/files/verified.gif'>
     ${localStorage.getItem('name')}
     </h3>
     <h4 class='verified'>
-    <img src=/files/teacher.gif'>
+    <img src='/files/teacher.gif'>
     ${localStorage.getItem('role')}</h4>
     <h4 class='verified'>
-    <img src=/files/hammer.gif'>
+    <img src='/files/hammer.gif'>
     ${localStorage.getItem('badge')}</h4>
     <button class="bx bx-log-out red" onclick="logout()"> Logout</button>
     <button class="bx bx-cog" onclick="apanel()"> Admin Panel</button>
@@ -146,15 +146,15 @@ function login() {
     localStorage.setItem('verified', false)
     localStorage.setItem('info',`
     <h3>Profile</h3>
-      <img src="svmassembly.tk/files/profile.gif" alt="">
+      <img src="/files/profile.gif" alt="">
     <h3 class='verified'>
     ${localStorage.getItem('name')}
     </h3>
     <h4 class='verified'>
-    <img src="svmassembly.tk/files/student.gif" alt="">
+    <img src="/files/student.gif" alt="">
      ${localStorage.getItem('role')}</h4>
     <h4 class='verified'>
-    <img src="svmassembly.tk/files/id-badge.gif" alt="">
+    <img src="/files/id-badge.gif" alt="">
     ${localStorage.getItem('badge')}
     </h4>
     <button class="bx bx-log-out red" onclick="logout()"> Logout</button>
