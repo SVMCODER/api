@@ -12,7 +12,7 @@ function createmachine() {
         swal({
             title: "Creating Machine",
             text: "Please wait...",
-            imageUrl: '/files/loading.gif'
+            imageUrl: 'files/loading.gif'
           });
           localStorage.setItem('commands', '0')
           localStorage.setItem('history', '<h3>History</h3>')
@@ -22,7 +22,7 @@ function createmachine() {
             swal({
                 title: "Done",
                 text: "Please wait...",
-                imageUrl: '/files/loading.gif'
+                imageUrl: 'files/loading.gif'
               });
             window.location.replace('machine-area.html')
           }, 200);
