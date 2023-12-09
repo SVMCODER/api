@@ -29,97 +29,7 @@ if (codeaio) {
     }
 
 }
-function logout() {
-swal({
-      title: "Are you sure?",
-      text: "You will be logged out and all your projects will be deleted!",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: '#DD6B55',
-      confirmButtonText: 'Logout',
-      cancelButtonText: "Cancel",
-      closeOnConfirm: false,
-      closeOnCancel: false
-  },
-  function(isConfirm){
-  if (isConfirm){
-    localStorage.removeItem('ed')
-    localStorage.removeItem('loggedin')
-    localStorage.removeItem('name')
-    localStorage.removeItem('project')
-    localStorage.removeItem('badge')
-    localStorage.removeItem('role')
-    localStorage.removeItem('database')
-    localStorage.removeItem('verified')
-    localStorage.removeItem('method')
-    localStorage.removeItem('av')
-      localStorage.removeItem('version')
-      localStorage.removeItem('size')
-      localStorage.removeItem('pcount')
-    swal("Logging Out", "Please wait", "success");
-    setTimeout(() => {
-      window.location.replace('index.html')
-    }, 1400);
-  } else {
-    swal({
-      title: "Ah! You're safe",
-      text: "Your projects are safe",
-      imageUrl: 'files/tick.gif'
-    });
-  }
-  });
-}
-function checkforupdates() {
-  var version = localStorage.getItem('version')
-  if (localStorage.getItem('av') == 'yes') {
-    swal({
-      title: "Update Available",
-      text: "Version "+version+" is available to install",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: '#DD6B55',
-      confirmButtonText: 'Install '+localStorage.getItem('size'),
-      cancelButtonText: "Later",
-      closeOnConfirm: false,
-      closeOnCancel: false
-    },
-  function(isConfirm) {
-  if (isConfirm){
-    localStorage.setItem('av','no')
-    swal({
-      title: "Installing",
-      text: "Please wait",
-      imageUrl: 'files/loading.gif'
-    });
-    setTimeout(() => {
-      swal({
-        title: "Installed",
-        text: "Version "+version+" is successfully installed!",
-        imageUrl: 'files/tick.gif'
-      });
-      setTimeout(() => {
-        window.location.replace('update-history.html')
-      }, 2300);
-    }, 2000);
-  } 
-  else {
-    swal({
-      title: "Sure",
-      text: "You can update it later on.",
-      imageUrl: 'files/tick.gif'
-    });
-  }
-}
-    );
-  }
-  else {
-    swal({
-      title: "Already installed",
-      text: "Version "+version+" and it's assets are already installed!",
-      imageUrl: 'files/tick.gif'
-    });
-  }
-}
+
 function saveaio() {
   pname = localStorage.getItem('pname')
   fname = localStorage.getItem('fname')
@@ -129,50 +39,50 @@ function saveaio() {
 ad = pcountj+1
 localStorage.setItem('pcount',ad)
     localStorage.setItem('database', localStorage.getItem('database')+`\n--------------\nProject Name: ${pname}\nFile Name: ${fname}\nCode: ${code = localStorage.getItem('codeaio')}\n`.replace('null',''))
-    localStorage.setItem('project',localStorage.getItem('project')+`
-    <div class='container'>
-    <img src='/files/folder.gif'>
-    <h3>${pname}</h3>
-    <h4 class='bx bx-file fname'>File Name ${fname}</h4>
-    <textarea readonly>${code}</textarea>
-      </div>
-    <br>
-    `.replace('null',''))
-    swal("Saved "+ pname, "Your project "+pname+" was saved successfully!", "success");
+    var firebaseConfig = {
+      apiKey: "AIzaSyCOA_2bf_b1o1nXSHZO5Re5DjSD66Pa6MY",
+      authDomain: "https://raona0-default-rtdb.firebaseio.com",
+      projectId: "raona0",
+      storageBucket: "raona0.appspot.com",
+      messagingSenderId: "797719983777",
+      appId: "1:797719983777:web:d7ffca1316891b51ec62e0"
+    };
+    // JavaScript
+    firebase.initializeApp(firebaseConfig);
+    
+        // Get a reference to the Firebase database
+        const database = firebase.database();
+        // Push data to Firebase
+        const projectRef = database.ref('projects');
+        const newProjectRef = projectRef.push();
+        newProjectRef.set({
+          code: code,
+          fname: fname,
+          pname: pname,
+          name: localStorage.getItem('uid')
+        })
+          Swal.fire({
+            title: "Saved",
+            icon: "success",
+            showConfirmButton: false
+          })
+      
+      
+      
   }
   else {
-    swal("Error saving "+pname, `Your project ${pname} was not successfully saved!\n
-    Reason: ${fname} is empty\n
-    Time: ${Date().replace('GMT+0530 (India Standard Time)','')}
-    
-    `, "warning");
-  }
+  Swal.fire({
+    title: "File is empty",
+    icon: "warning",
+    showConfirmButton: false,
+  })
+}
 }
 function closep() {
-  swal({
-    title: "Are you sure?",
-    text: "Your work will be gone forever.",
-    type: "warning",
-    showCancelButton: true,
-    confirmButtonColor: '#DD6B55',
-    confirmButtonText: 'Delete',
-    cancelButtonText: "Cancel",
-    closeOnConfirm: false,
-    closeOnCancel: false
-},
-function(isConfirm){
-if (isConfirm) {
-  swal("Deleting", "Please wait", "success");
+
   localStorage.removeItem('ed')
   localStorage.removeItem('pname')
   localStorage.removeItem('fname')
-  setTimeout(() => {
-    window.location.replace('config.html')
-  }, 1400);
-} else {
-  swal("Cancelled", "You project is safe!", "success");
+window.location.replace('config.html') 
 }
-});
-}
-localStorage.setItem('version', 'v4.90.0')
-  localStorage.setItem('size', '(3.2 MB)')
+

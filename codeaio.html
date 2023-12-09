@@ -39,7 +39,7 @@
       <i class='bx bx-home'></i>
       <p></p>
     </div>
-    <div class="tab active">
+    <div class="tab active purple">
       <i class='bx bxs-notepad'></i>
       <p></p>
     </div>
@@ -56,13 +56,13 @@
       <p></p>
     </div>
   </div>
-      <div class="head">
-        <img src="files/logoo.png" alt=""><h3>SVM CODER HUB</h3>
-        <h3 class="right" >
-          <i class="bx bxs-download" onclick="checkforupdates()"></i>
-          <i class="bx bxs-dsd"></i>
-          <i class='bx bx-log-out' onclick="logout()" ></i></h3>
-      </div>
+  <div class="head">
+    <h3> SVM CODER HUB</h3>
+    
+    <h3 class="right" >
+      <i class="bx bxs-download" onclick="window.location.href = 'update-history.html'"></i></h3>
+      
+  </div>
       <br><br> <br>
       <p></p>
   <div class="editor-prv">
@@ -78,6 +78,12 @@
     document.getElementById('p').innerHTML= ` ${localStorage.getItem('fname')} <i class='bx bx-x'></i>`
   
   </script>
+  <style>
+    button {
+      width: fit-content;
+      padding: 0.6em 1em;
+    }
+  </style>
 </body>
 </html>
 

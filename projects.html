@@ -36,12 +36,13 @@
           <i class='bx bx-home'></i>
           <p></p>
         </div>
-        <div class="tab" onclick="window.location.replace('config.html')">
-          <i class='bx bx-notepad'></i>
-          <p></p>
-        </div>
+       
         <div class="tab" onclick="window.location.replace('browser.html')">
           <i class='bx bx-rocket'></i>
+          <p></p>
+        </div>
+        <div class="tab" onclick="window.location.replace('chat.html')">
+          <i class='bx bx-chat'></i>
           <p></p>
         </div>
         <div class="tab active purple">
@@ -54,15 +55,13 @@
         </div>
       </div>
       <div class="head">
-        <img src="files/logoo.png" alt=""><h3>SVM CODER HUB</h3>
+        <h3 class="bx bx-left-arrow-alt" onclick="window.location.replace('browser.html')"> My Projects</h3>
+        
         <h3 class="right" >
-          <i class="bx bxs-download" onclick="checkforupdates()"></i>
-          <i class="bx bxs-dsd"></i>
-          <i class='bx bx-log-out' onclick="logout()" ></i></h3>
+          <i class="bx bxs-download" onclick="window.location.href = 'update-history.html'"></i></h3>
+          
       </div>
-      <p></p>
-  <br><br> <br>
-  <h3 align="center">My Projects</h3>
+      <br><br><br> <br>
     <p id="pcount"></p>
   <div class="a" align="center">
    <div class="all" align="center" id="project">
@@ -74,66 +73,13 @@
   </div>
    </div>
   
-  <script>
-  function checkforupdates() {
-  var version = localStorage.getItem('version')
-  if (localStorage.getItem('av') == 'yes') {
-    swal({
-      title: "Update Available",
-      text: "Version "+version+" is available to install",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: '#DD6B55',
-      confirmButtonText: 'Install '+localStorage.getItem('size'),
-      cancelButtonText: "Later",
-      closeOnConfirm: false,
-      closeOnCancel: false
-    },
-  function(isConfirm) {
-  if (isConfirm){
-    localStorage.setItem('av','no')
-    swal({
-      title: "Installing",
-      text: "Please wait",
-      imageUrl: 'files/loading.gif'
-    });
-    setTimeout(() => {
-      swal({
-        title: "Installed",
-        text: "Version "+version+" is successfully installed!",
-        imageUrl: 'files/tick.gif'
-      });
-      setTimeout(() => {
-        window.location.replace('update-history.html')
-      }, 2300);
-    }, 2000);
-  } 
-  else {
-    swal({
-      title: "Sure",
-      text: "You can update it later on.",
-      imageUrl: 'files/tick.gif'
-    });
-  }
-}
-    );
-  }
-  else {
-    swal({
-      title: "Already installed",
-      text: "Version "+version+" and it's assets are already installed!",
-      imageUrl: 'files/tick.gif'
-    });
-  }
-}
-document.getElementById('pcount').innerHTML = `
-Showing ${localStorage.getItem('pcount')} Project(s)
-`.replace('null',0)
-
-  </script>
+ 
   <style>
     #pcount{
       padding: 0em 1.5em;
+    }
+    .container {
+      margin-bottom: 12px;
     }
     .sc {
       border: 1px solid #08001f;
@@ -153,6 +99,55 @@ Showing ${localStorage.getItem('pcount')} Project(s)
   
   </style>
   <script src="js/project.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyCOA_2bf_b1o1nXSHZO5Re5DjSD66Pa6MY",
+    authDomain: "https://raona0-default-rtdb.firebaseio.com",
+    projectId: "raona0",
+    storageBucket: "raona0.appspot.com",
+    messagingSenderId: "797719983777",
+    appId: "1:797719983777:web:d7ffca1316891b51ec62e0"
+  };
+  // JavaScript
+  firebase.initializeApp(firebaseConfig);
+function displayProjects() {
+const projectList = document.getElementById('project');
+
+// Get a reference to the Firebase database
+const database = firebase.database();
+const projectRef = database.ref('projects');
+
+// Listen for changes in the data
+projectRef.on('value', (snapshot) => {
+  projectList.innerHTML = ''; // Clear previous data
+
+  // Loop through each project in the snapshot
+  snapshot.forEach((childSnapshot) => {
+    const projectData = childSnapshot.val();
+    if (projectData.name == localStorage.getItem('uid')) {
+      pjst = document.createElement('div')
+      pjst.setAttribute("class", "container")
+pjst.innerHTML = `
+<img src='/files/folder.gif'>
+    <h3>${projectData.pname}</h3>
+    <h4 class='bx bx-file fname'>File Name: ${projectData.fname}</h4>
+    <textarea readonly>${projectData.code}</textarea>
+    <br>
+      <iframe srcdoc="${projectData.code}"></iframe>
+      `
+      // Append the list item to the project list
+      projectList.appendChild(pjst);
+    }
+  });
+});
+}
+displayProjects()
+  </script>
   <br><br><br>
 </body>
 </html>

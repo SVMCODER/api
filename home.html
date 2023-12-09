@@ -21,19 +21,19 @@
       <i class='bx bxs-home'></i>
       <p></p>
     </div>
-    <div class="tab" onclick="window.location.replace('config.html')">
-      <i class='bx bx-notepad'></i>
-      <p></p>
-    </div>
-    <div class="tab" onclick="window.location.replace('browser.html')">
+    <div class="tab" onclick="window.location.href='browser.html'">
       <i class='bx bx-rocket'></i>
       <p></p>
     </div>
-    <div class="tab" onclick="window.location.replace('projects.html')">
+    <div class="tab" onclick="window.location.href='chat.html'">
+      <i class='bx bx-chat' ></i>
+      <p></p>
+    </div>
+    <div class="tab" onclick="window.location.href='projects.html'">
       <i class='bx bx-heart' ></i>
       <p></p>
     </div>
-    <div class="tab" onclick="window.location.replace('profile.html')">
+    <div class="tab" onclick="window.location.href='profile.html'">
       <i class='bx bx-user' ></i>
       <p></p>
     </div>
@@ -42,13 +42,10 @@
     <img src="files/logoo.png" alt=""><h3> SVM CODER HUB</h3>
     
     <h3 class="right" >
-      <i class="bx bxs-download" onclick="checkforupdates()"></i>
-      <i class="bx bxs-dsd"></i>
-      <i class='bx bx-log-out' onclick="logout()" ></i></h3>
+      <i class="bx bxs-download" onclick="window.location.href = 'update-history.html'"></i></h3>
       
   </div>
-  <br><br><br> 
-  <h3 align="center" id="name"></h3>
+  <br><br><br> <br>
   <div align="center">
     <div class="container">
       <img src="files/browser.gif" alt="">
@@ -65,68 +62,16 @@
   </div>
 <br>
     <div class="container">
-      <img src="files/logo.png" alt="">
+      <img src="files/logoo.png" alt="">
       <h3>Information</h3>
-      <p>It is a mobile programming platform coded by <b>Shaurya Tripathi</b> for students to code on Low-End mobile devices.</p>
-      <p>If you love this app, then please give me a thanks at the school.</p>
-      <button class="bx bx-user" onclick="window.location.replace('me.html')"> Shaurya Tripathi</button>
+      <p>See the story behind the making of this App</p>
+      <button class="bx bx-user" onclick="window.location.replace('me.html')"> Read More...</button>
     </div><br>
 
 </div>
 <br><br><br>
 <script>
-  function checkforupdates() {
-  var version = localStorage.getItem('version')
-  if (localStorage.getItem('av') == 'yes') {
-    swal({
-      title: "Update Available",
-      text: "Version "+version+" is available to install",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: '#DD6B55',
-      confirmButtonText: 'Install '+localStorage.getItem('size'),
-      cancelButtonText: "Later",
-      closeOnConfirm: false,
-      closeOnCancel: false
-    },
-  function(isConfirm) {
-  if (isConfirm){
-    localStorage.setItem('av','no')
-    swal({
-      title: "Installing",
-      text: "Please wait",
-      imageUrl: 'files/loading.gif'
-    });
-    setTimeout(() => {
-      swal({
-        title: "Installed",
-        text: "Version "+version+" is successfully installed!",
-        imageUrl: 'files/tick.gif'
-      });
-      setTimeout(() => {
-        window.location.replace('update-history.html')
-      }, 2300);
-    }, 2000);
-  } 
-  else {
-    swal({
-      title: "Sure",
-      text: "You can update it later on.",
-      imageUrl: 'files/tick.gif'
-    });
-  }
-}
-    );
-  }
-  else {
-    swal({
-      title: "Already installed",
-      text: "Version "+version+" and it's assets are already installed!",
-      imageUrl: 'files/tick.gif'
-    });
-  }
-}
-  document.getElementById('name').innerHTML = 'Welcome ' + localStorage.getItem('name')
+ 
 </script>
 <script src="js/app.js"></script>
 </body>

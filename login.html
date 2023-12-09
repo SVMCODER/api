@@ -1,137 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>SVM CODER HUB | PORTAL</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVM CODER HUB - LOGIN</title>
 </head>
-<body> 
-    <div class="signup-form">
-        <div class="container">
-          <div class="header">
-            <div class="f">
-              <h1></h1>
-              <h1></h1>
-              <img src="files/logoo.png" alt="">
-            <h2>SVM CODER HUB</h2>
-            <h1></h1>
-            <h1></h1>
-            <h1></h1>
-            </div>
-            <p>Signup To Our Portal</p>
-          </div>
-            <div class="input">
-              <i class="fa-solid fa-user"></i>
-              <input type="text" id="username" placeholder="Username" required/>
-            </div>
-            <div class="input">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" id="password" placeholder="Password" required/>
-            </div>
-            <div class="input">
-              <i class="fa-solid fa-address-card"></i>
-              <input type="number" id="admno" placeholder="Admission Number" required/>
-            </div>
-            <div class="input">
-              <i class="fa-solid fa-male"></i>
-              <input type="text" id="frname" placeholder="Father's Name" required/>
-            </div>
-            <div class="input">
-              <i class="fa-solid fa-female"></i>
-              <input type="text" id="mrname" placeholder="Mother's Name" required/>
-            </div>
-            <input type="submit" value="SIGN UP" onclick="login()" />
-        </div>
-      </div>
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-* {
+<body>
+  <div class="container">
+    <div class="logo">
+      <h2>SVM CODER HUB</h2>
+    </div>
+    <div class="login-form">
+      <input type="email" placeholder="Email" id="email">
+      <input type="password" placeholder="Password" id="password">
+      <button onclick="login()">Log In</button>
+  </div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.min.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script src="js/index.js"></script>
+  <style>
+    body {
+    background-image: linear-gradient(90deg, rgb(44, 44, 44), rgb(19, 19, 19));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  *:focus {
+    outline: none !important;
+  }
+  .container {
+    background-image: linear-gradient(90deg, rgb(15, 15, 15), rgb(2, 2, 2));
+    border: 1px solid #141414;
+    border-radius: 4px;
+    padding: 30px;
+    width: 80%;
+    color: white;
+    text-align: center;
+  }
   
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  outline-color: #030016;
-}
-img {
-  width: 70%;
-}
-html,body {
-  min-height: 100%;
-  display: grid;
-  place-items: center;
-  background-color: #01000f;
-}
-
-p {
-  font-size: 14px;
-  color: #6b7280;
-}
-
-.signup-form {
-  width: 97%;
-  padding: 24px;
-  border-radius: 2px;
-  background-color: #ffffff;
-  box-shadow: 2px 4px 8px #07001ff8;
-  text-align: center;
-}
-
-
-
-.header h2 {
-  color: #ff0066;
-}
-
-.input {
-  position: relative;
-  margin-bottom: 24px;
-}
-
-.input input {
-  width: 100%;
-  border: none;
-  padding: 8px 40px;
-  border-radius: 4px;
-  background-color: #f3f4f6;
-  color: #1f2937;
-  font-size: 16px;
-}
-
-.input input::placeholder {
-  color: #6b7280;
-}
-
-.input i {
-  top: 50%;
-  width: 36px;
-  position: absolute;
-  transform: translateY(-50%);
-  color: #6b7280;
-  font-size: 16px;
-}
-
-input[type=Submit] {
-  width: 100%;
-  border: none;
-  padding: 8px 0;
-  margin: 24px 0;
-  border-radius: 4px;
-  background-color: #f80b46;
-  color: #ffffff;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-input[type=Submit]:active {
-  background-color: #f80c3f;
-  transition: all 0.3s ease;
-}
-</style>
-<script src="js/index.js"></script>
+  .logo {
+    margin-bottom: 20px;
+  }
+  
+  .logo img {
+    width: 175px;
+  }
+  
+  .login-form input {
+    background-image: linear-gradient(90deg, rgb(36, 36, 36), rgb(36, 36, 36));
+    width: 90%;
+    padding: 8px 10px;
+    color: white;
+    margin-bottom: 10px;
+    border: 1px solid #1d1d1d;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  *{
+    -moz-outline-style: none; /* For Firefox */
+    -webkit-tap-highlight-color: transparent; /* For WebKit/Blink-based browsers */
+  
+  }
+  .login-form button {
+    width: fit-content;
+    padding: 0.6em 1em;
+    background-color: #004b92;
+    border: none;
+    border-radius: 4px;
+    color: #cacaca;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #005cb3;
+  }
+  
+  </style>
 </body>
+
 </html>

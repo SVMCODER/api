@@ -1,0 +1,245 @@
+/* styles.css */
+/* Disable the default focus outline on anchor elements */
+/* Disable the default active styles on anchor elements */
+*{
+    -moz-outline-style: none; /* For Firefox */
+    -webkit-tap-highlight-color: transparent; /* For WebKit/Blink-based browsers */
+  
+  }
+  body {
+      font-family: Arial, sans-serif;
+      background-image: linear-gradient(90deg, rgb(36, 0, 95), rgb(17, 0, 32));
+      /* The following styles ensure the background image covers the entire viewport */
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+    
+    h2 {
+      font-size: 24px;
+      margin: 0;
+    }
+  
+    h2 {
+      font-size: 24px;
+      margin: 0;
+    }
+    #messages {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .message {
+      display: flex;
+      flex-direction: column;
+      max-width: 60%;
+      width: 60%;
+      padding: 10px;
+      margin-bottom: 8px;
+      
+      
+      word-break: break-word !important; /* Add !important to override any conflicting styles */
+    }
+    .message.typing-indicator {
+      border-radius: 18px;
+      align-self: flex-start;
+      color: rgb(255, 255, 255);
+      background-image: linear-gradient(90deg,rgb(34, 38, 102),rgb(60, 20, 112));
+      border: 1px solid #535353;
+      border-bottom-left-radius: 0%;
+      font-style: italic;
+    }
+    
+    
+  .usernameContainer{
+    display: flex;
+  }
+  .uname {
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  
+  .text {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .times {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #bbbbbb;
+  }
+    .message.sent {
+      border-radius: 18px;
+      align-self: flex-end;
+      background-image: linear-gradient(90deg,rgb(60, 20, 112),rgb(34, 38, 102));
+      color: #f3f3f3;
+      border: 1px solid #535353;
+      border-bottom-right-radius: 0%;
+    }
+    
+    .message.received {
+      border-radius: 18px;
+      align-self: flex-start;
+      color: rgb(255, 255, 255);
+      background-image: linear-gradient(90deg,rgb(34, 38, 102),rgb(60, 20, 112));
+      border: 1px solid #535353;
+      border-bottom-left-radius: 0%;
+    }
+    
+  
+  
+  
+  
+  
+    .messageContent {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 5px;
+    }
+    
+    .username {
+      font-weight: bold;
+    }
+    
+    .text {
+      word-wrap: break-word;
+      margin-top: 6px;
+      font-size: 14px;
+    }
+    
+  
+    .send-message-container {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 99.99%;
+      left: 0;
+      background-color: #040013;
+      visibility: hidden;
+    }
+    #niss {
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 99.99%;
+      font-size: 14px;
+      background-color: #040013;
+    }
+    .send-message-container input[type="text"] {
+      border: none;
+      border-radius: 4px;
+      outline: none;
+      background-color: #040013;
+    }
+    
+    .send-message-container button {
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background-color: #040013;
+    }
+    
+    .send-message-container button[disabled] {
+      color: #999;
+      background-color: #040013;
+      cursor: not-allowed;
+    }
+    
+  /* Hide the scrollbar for webkit-based browsers */
+  #messages::-webkit-scrollbar {
+      display: none;
+    }
+    .trash-icon {
+      position: absolute;
+      top: -10px;
+      right: 5px;
+      font-size: 16px;
+      color: #888;
+      cursor: pointer;
+    }
+  .uname {
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 5px;
+    max-width: auto; /* Adjust the max-width as needed */
+  }
+  .times {
+    text-align: right;
+    color: #b3b3b3;
+    right: 10px;
+  }
+   /* Style for the loading spinner */
+   .loading-spinner {
+    align-items: center;
+    justify-content: center;
+    margin-top: 50%;
+  }
+  
+  .spinner {
+    border: none;
+    border-radius: 50%;
+    border-top: 4px solid #6600ff;
+    width: 40px;
+    height: 40px;
+    animation: spin 1.4s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .sysmsg {
+    border-radius: 18px;
+    align-self: center;
+    color: rgb(212, 212, 212);
+    background-image: linear-gradient(90deg,rgb(83, 37, 167),rgb(111, 0, 255));
+    border: 1px solid #535353;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    padding: 0.6em 1em;
+    width: 80%;
+    margin-top: 5px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .file-input-label {
+    display: inline-block;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .plus-icon {
+    margin-right: 2px;
+  }
+  button {
+    margin-right: 4px;
+  }
+  
+  /* Style for user profile image */
+  .profile-image {
+    background-color: #131313;
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    border-radius: 50%; /* Make the image round */
+    margin-right: 2px; /* Adjust the margin as needed */
+    cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+  }

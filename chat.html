@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html> 
+<head>
+  <title>SVM CODER HUB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="head">
+    <h3 style="color: white;margin-left: 5px;" class="bx bx-left-arrow-alt" onclick="window.location.replace('home.html')"> Chats</h3>
+    <h3 id="time" align="center" style="color: rgb(241, 237, 0)"></h3>
+    
+  </div>
+  <br><br><br> <br>
+    <div class="aa" align="center"> 
+    <div class="csss" align="center">
+      <button class="bx bx-group" id="createRoomBtn"> Create Group</button>
+      <button onclick="joinRoomWithInviteCode()" class="bx bx-plus"> Join Group</button>
+    </div>
+    <h3 style="color: white;">School Groups</h3>
+    <div class="user">
+      <div class="imgd" onclick="window.location.href='chatroom.html?id=111111'">
+        <img src="files/logoO.png" class="profile-image" >
+      </div> 
+      <div class="usene" onclick="window.location.href='chatroom.html?id=111111'"> 
+        <div id="username">SVM CODER HUB</div> 
+        <div id="msg-info">Only Admins can send messages.</div>
+      </div>
+    </div>
+    <h3 style="color: white;">My Chats</h3>
+   
+        <div id="roomList">
+            <!-- <div id="loadingSpinner" class="loading-spinner" align="center"> <br>
+              <div class="spinner"></div>
+            </div> --> 
+            
+            <div id="roomList">
+              <div id="rooms">
+                <div id="loadingSpinner" class="loading-spinner" align="center"> <br>
+                  <div class="spinner"></div>
+                </div>
+              </div>
+            </div>
+
+           
+           
+          </div>
+        </div>
+    
+   <br>
+<script>
+  
+//  setInterval(() => {
+//   const time = new Date();
+//     document.getElementById('time').innerHTML =  time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric',second: 'numeric', hour12: true })
+//  }, 1000);
+</script>
+<style>
+  .user {
+  background: linear-gradient(90deg,#030303,#0a0a0a);
+  padding: 0.6em 1em;
+  height: auto;
+  max-height: 50px;
+  display: flex;
+  border-top: 1px solid rgb(66, 0, 128);
+  border-bottom: 1px solid rgb(55, 0, 128);
+  margin-bottom: 4px;
+  
+  
+}
+.usene{
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#username {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.errors {
+  margin-top: 60%;
+  margin-bottom: auto;
+  color: rgb(226, 226, 226);
+  font-size: 16px;
+}
+#dds{
+  font-size: 56px;
+  color: crimson;
+}
+#user-act {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  right: 12px;
+  margin-left: auto;
+  padding: 1em 1em;
+}
+h5 {
+  color: #d3d3d3;
+  font-size: 12px;
+}
+/* .imgd{
+  justify-content: center;
+  padding: none;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgb(105, 0, 243);
+  border-radius: 50%;
+  margin-right: 25px;
+  object-fit: contain;
+}
+.imgd img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+} */
+.imgd {
+  width: 46px;
+  height: 46px;
+
+  margin-right: 25px;
+}
+
+.imgd .profile-image {
+  width: 44px;
+  height: 44px;
+  border: 1px solid red;
+  border-radius: 100%; /* Make it circular */
+  object-fit: cover;
+}
+
+
+.bxs-circle {
+  background-color: #00ff08;
+}
+#msg-info {
+  font-size: 12px;
+}
+</style>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+  <script src="JS/chat.js"></script>
+  <script src="JS/nav.js"></script>
+</body>
+</html>

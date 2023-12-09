@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://use.fontawesome.com/7ad89d9866.js"></script>
     <script src="https://kit.fontawesome.com/51278b7950.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
-    <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
    </head>
 <body >
     <div class="tab-nav-container">
@@ -20,12 +21,13 @@
           <i class='bx bx-home'></i>
           <p></p>
         </div>
-        <div class="tab" onclick="window.location.replace('config.html')">
-          <i class='bx bx-notepad'></i>
-          <p></p>
-        </div>
+       
         <div class="tab" onclick="window.location.replace('browser.html')">
           <i class='bx bx-rocket'></i>
+          <p></p>
+        </div>
+        <div class="tab" onclick="window.location.replace('chat.html')">
+          <i class='bx bx-chat'></i>
           <p></p>
         </div>
         <div class="tab" onclick="window.location.replace('projects.html')">
@@ -38,78 +40,143 @@
         </div>
       </div>
       <div class="head">
-        <img src="files/logoo.png" alt=""> <h3>SVM CODER HUB</h3>
+        <img src="files/logoo.png" alt=""><h3> SVM CODER HUB</h3>
+        
         <h3 class="right" >
-          <i class="bx bxs-download" onclick="checkforupdates()"></i>
-          <i class="bx bxs-dsd"></i>
-          <i class='bx bx-log-out' onclick="logout()" ></i></h3>
+          <i class="bx bxs-download" onclick="window.location.href = 'update-history.html'"></i></h3>
+          
       </div>
-      <p></p>
-  <br><br> 
-  <h3 align="center">My Account</h3>
-   <div class="all" align="center">
-    <div align="center" class="container" align="center" id="info">
-  </div><br>
-  <div class="container">
-    <h3>Settings</h3>
-      <div id="info2"></div> 
-      <button class="bx bx-save" onclick="save()"> Save</button>
-  </div><br>
+  <br><br> <br><br>
+  <div class="ds" align="center">
+    <div class="container" align="center">
+      <div class="profile-card">
+        <h3>PROFILE</h3>
+        <div class="profilepic">
+          <img class="profile-picture" id="profile-picture" src="" >
+          
+        </div>
+        
+        <div class="d" id="infoo" style="display: flex;" align="center">
+          
+        </div>
+        <h4 id="role"></h4>
+        <h3>ABOUT THIS ACCOUNT</h3>
+        <div class="shipping-card">
+          
+          <h4 id="bio" align="center">Hey there! I am using Malrim</h4><hr>
+          <h4 id="user-email" style="display: none;"></h4>
+          <h4 id="cd" align="center">Joined on</h4>
+          
+        </div> <br>
+        <button id="editbtn" class="bx bx-edit" style="display: none;"> Name & Image</button> <br>
+        <button id="editShippingBtn" class="bx bx-edit"> Bio</button> <br><br>
+        <button onclick="logout()" class="bx bx-log-out" style="background-color: red;"> Logout</button>
+      </div>
+      
+    </div>
    </div>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
   <br><br><br><br>
-  <script>
-  function checkforupdates() {
-  var version = localStorage.getItem('version')
-  if (localStorage.getItem('av') == 'yes') {
-    swal({
-      title: "Update Available",
-      text: "Version "+version+" is available to install",
-      type: "warning",
-      showCancelButton: true,
-      confirmButtonColor: '#DD6B55',
-      confirmButtonText: 'Install '+localStorage.getItem('size'),
-      cancelButtonText: "Later",
-      closeOnConfirm: false,
-      closeOnCancel: false
-    },
-  function(isConfirm) {
-  if (isConfirm){
-    localStorage.setItem('av','no')
-    swal({
-      title: "Installing",
-      text: "Please wait",
-      imageUrl: 'files/loading.gif'
-    });
-    setTimeout(() => {
-      swal({
-        title: "Installed",
-        text: "Version "+version+" is successfully installed!",
-        imageUrl: 'files/tick.gif'
-      });
-      setTimeout(() => {
-        window.location.replace('update-history.html')
-      }, 2300);
-    }, 2000);
-  } 
-  else {
-    swal({
-      title: "Sure",
-      text: "You can update it later on.",
-      imageUrl: 'files/tick.gif'
-    });
-  }
+ <style>
+      #role {
+      color: rgb(209, 159, 255);
+    }
+    i {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    #tickk {
+      background-color: rgb(0, 110, 255);
+      font-size: 18px;
+      border: 1px dashed white;
+      border-radius: 100%;
+      padding: 2px 2px;
+
+    }
+    .profilepic {
+      background-color: #0e0033;
+      border: 3px solid rgb(89, 0, 255);
+      border-radius: 100%;
+      height: 200px;
+      width: 200px;
+      
+    }
+    .profilepic img {
+      background-color: #0e0033;
+      object-fit: cover;
+      height: 200px;
+      width: 200px;
+      border-radius: 100%;
+    }
+    .d {
+      display: flex;
+      justify-content: space-around;
+      font-size: 18px;
+    }
+    hr {
+      border: 1px solid rgb(0, 13, 255);
+    }
+    #user-name {
+      margin-right: 5px;
+      font-size: 18px;
+      
+    }
+    .shipping-card {
+      border: 1px solid rgb(0, 10, 104);
+      background-color: #ffffff;
+      padding: 0.6em 1em;
+      font-size: 14px;
+      margin: 0;
+      text-align: center;
+    }
+ button {
+  width: fit-content;
+    border: none;
+    padding: 0.6em 1em;
+    border-radius: 4px;
+    background-color: #160053;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: none;
+ }
+
+.loading-spinner {
+  align-items: center;
+  justify-content: center;
 }
-    );
-  }
-  else {
-    swal({
-      title: "Already installed",
-      text: "Version "+version+" and it's assets are already installed!",
-      imageUrl: 'files/tick.gif'
-    });
-  }
+.container {
+  width: 90%
 }
-  </script>
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+button{
+  background-color: rgb(30, 0, 114);
+}
+ </style>
   <script src="js/profile.js"></script>
   <style>
   </style>

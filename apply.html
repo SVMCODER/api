@@ -12,108 +12,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <div class="tab-nav-container">
-    <div class="tab" onclick="window.location.replace('home.html')">
-      <i class='bx bx-home'></i>
-      <p></p>
-    </div>
-    <div class="tab" onclick="window.location.replace('config.html')">
-      <i class='bx bx-notepad'></i>
-      <p></p>
-    </div>
-    <div class="tab" onclick="window.location.replace('browser.html')">
-      <i class='bx bx-rocket'></i>
-      <p></p>
-    </div>
-    <div class="tab" onclick="window.location.replace('projects.html')">
-      <i class='bx bx-heart' ></i>
-      <p></p>
-    </div>
-    <div class="tab" onclick="window.location.replace('profile.html')">
-      <i class='bx bx-user' ></i>
-      <p></p>
-    </div>
-  </div>
+  
   <div class="head">
-    <img src="files/logoo.png" alt=""><h3> SVM CODER HUB</h3>
-    
+    <h3 class="bx bx-left-arrow-alt" onclick="window.location.replace('home.html')"> Application Form</h3>
     <h3 class="right" >
-      <i class="bx bxs-download" onclick="checkforupdates()"></i>
-      <i class="bx bxs-dsd"></i>
-      <i class='bx bx-log-out' onclick="logout()" ></i></h3>
-      
-  </div>
-  <br><br><br> 
-  <h3 align="center">Appliction Form</h3>
+     <i class="bx bxs-heart" onclick="window.location.replace('projects.html')" style="color: crimson;"></i></h3>
+   </div>
+  <br><br><br> <br><br>
   <div align="center">
     <div class="container">
       <img src="files/number-one.gif" alt="">
       <input type="text" name="" id="pname" placeholder="Project Name"><br><br>
+      <input type="text" name="" id="class" placeholder="Class and Section"><br><br>
       <textarea name="" id="code" cols="30" rows="10" placeholder="Write or Paste the code here."></textarea>
       <div id="error"></div>
-      <button onclick="apply()">Submit</button>
+      <button onclick="apply()" id="sdd">Submit</button>
     </div><br>
 
 </div>
 <br><br><br>
-<script>
 
-    function apply() {
-      code = document.getElementById('code').value;
-        pname = document.getElementById('pname').value;
-        uname = localStorage.getItem('name');
-        mrname = localStorage.getItem('mrname');
-        frname = localStorage.getItem('frname');
-        admno = localStorage.getItem('admno');
-        error = document.getElementById('error')
-       if (pname.length <= 1 || code.length <= 5) {
-        error.innerHTML = 'Insufficinet Details\n1. Project Name is short\n2. Code is short.'
-       }
-      
-    else {
-      var params = {
-    to_email: 'support@https://svmassembly.tk',
-    subject: 'New Application | SVM CODER HUB',
-    message: `Name: ${uname}\n
-    Admission Number: ${admno}\n
-    Father's Name: ${frname}\n
-    Mother's Name: ${mrname}\n
-    Project Name: ${pname}\n
-    Code: ${code}`
-  };
-  
-  emailjs.send('apply', 'apply', params, '3cf-zRGU7xx-b_kP8')
-    .then(function() {
-      swal({
-        title: "Form Submitted!",
-        text: "Dear "+uname+", Your application has been successfully sent!",
-        imageUrl: 'files/tick.gif'
-      })
-      setTimeout(() => {
-        window.location.replace('home.html')
-      }, 5000);
-    }, function(error) {
-      console.log('Error:');
-      swal({
-        title: "Error",
-        text: "Error: "+error,
-        icon: 'error'
-      })
-    });
-    }
-       }
-</script>
 <style>
     textarea {
         padding: 0.6em 1em;
         color: white;
-        background-color: #000107;
+        background-color: rgb(7, 7, 7);
         resize: none;
     }
 </style>
@@ -171,5 +100,57 @@
 }
 </script>
 <script src="js/app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyCOA_2bf_b1o1nXSHZO5Re5DjSD66Pa6MY",
+      authDomain: "https://raona0-default-rtdb.firebaseio.com",
+      projectId: "raona0",
+      storageBucket: "raona0.appspot.com",
+      messagingSenderId: "797719983777",
+      appId: "1:797719983777:web:d7ffca1316891b51ec62e0"
+    };
+    // JavaScript
+    firebase.initializeApp(firebaseConfig);
+    function apply() {
+      const code = document.getElementById('code').value;
+      const classno = document.getElementById('class').value;
+      const pname = document.getElementById('pname').value;
+      const uname = localStorage.getItem('name');
+      const error = document.getElementById('error');
+    
+      if (pname.length <= 1 || code.length <= 5) {
+        error.innerHTML = 'Insufficient Details<br><br>1. Project Name is short<h4>OR</h4>2. Code is short.';
+      } else {
+        // Get a reference to the Firebase database
+        const database = firebase.database();
+        // Push data to Firebase
+        const projectRef = database.ref('forms');
+        const newProjectRef = projectRef.push();
+        newProjectRef.set({
+          code: code,
+          classno: classno,
+          pname: pname,
+          uname: uname
+        })
+          Swal.fire({
+            title: "Application Sent",
+            icon: "success",
+            showConfirmButton: false
+          })
+    document.getElementById('sdd').style.disabled = true
+      }
+      }
+      
+    
+           
+    </script>
 </body>
 </html>
